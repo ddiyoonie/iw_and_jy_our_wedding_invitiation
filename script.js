@@ -29,7 +29,7 @@ function updateDday(){
   const diff = Math.ceil((weddingDate - now) / 86400000);
   const el = document.getElementById("dday");
   if(!el) return;
-  if(diff > 0) el.textContent = `D-${diff}일 ෆ`;
+  if(diff > 0) el.textContent = `ෆ D-${diff} ෆ`;
   else if(diff === 0) el.textContent = "D-DAY ෆ";
   else el.textContent = `D+${Math.abs(diff)}일 ෆ`;
 }
@@ -260,3 +260,29 @@ viewport?.addEventListener("touchend",()=>{
   galleryImages = await discoverGalleryImages();
   buildGallery();
 })();
+
+
+const bgMusic = document.getElementById("bgMusic");
+
+// 페이지 열자마자 재생 시도
+window.addEventListener("load", async () => {
+  try {
+    await bgMusic.play();
+  } catch (e) {
+    console.log("자동재생 차단됨 - 첫 터치 시 재생");
+  }
+});
+
+// 자동재생이 막힌 폰에서는 첫 터치 순간 바로 재생
+async function forceStartMusic() {
+  if (!bgMusic.paused) return;
+
+  try {
+    await bgMusic.play();
+  } catch (e) {
+    console.log("음악 재생 실패");
+  }
+}
+
+document.addEventListener("touchstart", forceStartMusic, { once: true });
+document.addEventListener("click", forceStartMusic, { once: true });
