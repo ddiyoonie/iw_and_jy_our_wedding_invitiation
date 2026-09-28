@@ -99,17 +99,18 @@ img{max-width:100%}
   filter:saturate(.84) contrast(.97);
 }
 .paper-meta{font-family:var(--serif)}
-.couple-name{font-size:10px;letter-spacing:.12em;margin-bottom:14px}
+.couple-name{font-size:18px;line-height:1.15;letter-spacing:.045em;margin-bottom:3px}
 .couple-name span{font-size:6px;vertical-align:2px;margin:0 3px}
-.venue-name{font-size:15px;line-height:1.15;letter-spacing:.045em;margin-bottom:3px}
-.wedding-date{font-size:10px;letter-spacing:.08em}
+.venue-name{font-size:18px;line-height:1.15;letter-spacing:.045em;margin-bottom:3px}
+.hall-name{font-size:12px;letter-spacing:.08em}
+.wedding-date{font-size:15px;letter-spacing:.08em}
 .paper-message{margin-top:30px}
 .handwriting{
-  font:400 25px/.9 var(--script);
+  font:400 20px/.9 var(--script);
   margin-bottom:20px;
 }
 .message-ko{
-  font:300 9.5px/2.05 var(--ko);
+  font:300 10px/2.05 var(--ko);
   letter-spacing:-.02em;
   color:#493b36;
 }
@@ -134,7 +135,7 @@ img{max-width:100%}
 .editorial-lockup .our{align-self:flex-start;margin-left:7%;font-size:15px;letter-spacing:.24em}
 .editorial-lockup strong{font-size:48px;font-weight:400;letter-spacing:-.03em}
 .editorial-lockup em{align-self:flex-end;margin-right:7%;font:400 30px/1 var(--script);transform:translateY(-1px)}
-.celebrate-date{margin:35px 0 28px;font:400 10px/1 var(--serif);letter-spacing:.12em}
+.celebrate-date{margin:35px 0 28px;font:400 13px/1 var(--serif);letter-spacing:.12em}
 .family-grid{
   display:grid;
   grid-template-columns:1fr 18px 1fr;
@@ -143,9 +144,9 @@ img{max-width:100%}
   border-bottom:1px solid var(--line);
   padding:19px 0 18px;
 }
-.family-person p{font-size:8.5px;letter-spacing:-.025em;color:#685950;margin-bottom:8px}
+.family-person p{font-size:12px;letter-spacing:-.025em;color:#685950;margin-bottom:8px}
 .family-person strong{font:400 14px/1 var(--ko)}
-.family-heart{font-size:7px}
+.family-heart{font-size:15px}
 
 /* GALLERY */
 .gallery{padding:68px 0 72px}
@@ -193,8 +194,8 @@ img{max-width:100%}
 .cal-day.empty{visibility:hidden}
 .cal-day.selected{width:28px;justify-self:center;background:var(--wine);color:var(--ivory)}
 .date-divider{height:1px;background:var(--line);margin:23px 0 20px}
-.calendar-date{font:400 10px/1 var(--serif);letter-spacing:.045em}
-.dday{margin-top:9px;font:400 19px/1 var(--script)}
+.calendar-date{font:400 13px/1 var(--serif);letter-spacing:.045em}
+.dday{margin-top:9px;font:400 30px/1 var(--script)}
 
 /* INFORMATION */
 .information{padding:69px 0 72px}
@@ -281,4 +282,44 @@ body.modal-open{overflow:hidden}
   .hero{padding-left:14px;padding-right:14px}
   .paper-inner{padding-left:20px;padding-right:20px}
   .editorial-lockup strong{font-size:42px}
+}
+
+.music-btn {
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  z-index: 9999;
+
+  width: 42px;
+  height: 42px;
+
+  border: 1px solid rgba(255,255,255,0.35);
+  border-radius: 50%;
+
+  background: rgba(47, 23, 19, 0.78);
+  color: #eee7da;
+
+  font-family: Georgia, serif;
+  font-size: 18px;
+
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+.music-btn.playing {
+  animation: musicSpin 5s linear infinite;
+}
+
+@keyframes musicSpin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
