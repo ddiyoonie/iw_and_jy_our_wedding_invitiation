@@ -12,6 +12,11 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<audio id="bgMusic" autoplay loop preload="auto">
+  <source src="music/wedding_music_함께.mp3" type="audio/mpeg">
+</audio>
+
 <main class="invitation">
 
   <!-- 01. INVITED -->
@@ -24,27 +29,17 @@
         <h1 class="benediction">Bénédiction</h1>
 
         <figure class="polaroid polaroid-main">
-          <img src="images/gallery1.jpg" alt="Wedding portrait" onerror="this.closest('figure').classList.add('image-missing'); this.style.display='none'">
+          <img src="images/story.jpg" alt="Wedding portrait" onerror="this.closest('figure').classList.add('image-missing'); this.style.display='none'">
           <span class="missing-label">PHOTO</span>
         </figure>
 
         <div class="paper-meta">
-          <p class="couple-name">INWON <span>♥</span> JIYOON</p>
-          <p class="venue-name">RAMADA SEOUL SINDORIM HOTEL</p>
-          <p class="wedding-date">2027.08.22 SUN PM 12:10</p>
+          <p class="couple-name">INWON <span>♥</span> JIYOON</p><br>
+          <p class="hall-name">Ramada Seoul Sindorim Hotel</p>
+          <p class="hall-name">Saint Grace Hall</p><br>
+          <p class="wedding-date">2027.08.22 PM 12:10</p>
         </div>
 
-        <div class="paper-message">
-          <p class="handwriting">Celebrate Our Wedding Party</p>
-          <p class="message-ko">
-            서로의 하루가 되어 같은 방향을 바라보며<br>
-            오래도록 함께 걷기로 약속했습니다.<br>
-            귀한 걸음으로 저희의 새로운 시작을<br>
-            따뜻하게 축복해 주시면 감사하겠습니다.<br><br>
-            둘이 함께 맞이하는 소중한 계절,<br>
-            저희 두 사람 결혼합니다.
-          </p>
-        </div>
       </div>
     </article>
   </section>
@@ -64,23 +59,37 @@
         <span class="missing-label">PHOTO</span>
       </figure>
     </div>
-
+<!--
     <div class="editorial-lockup reveal">
       <span class="our">OUR,</span>
-      <strong>WEDDING</strong>
-      <em>Party</em>
+      <strong>Story</strong>
+      <em>Day</em>
     </div>
-
-    <p class="celebrate-date">2027.08.22 SUN PM 12:10</p>
+-->
+    <div class="paper-message">
+      <!--<p class="handwriting">Celebrate Our Wedding-->
+      <p class="message-ko">
+        같은 학교, 같은 과에서 만나<br>
+        어느새 여덟 번째 여름을 함께 맞이합니다.<br><br>
+        귀설레는 날에는 누구보다 가까이에서 웃어주고,<br>
+        힘든 날에는 말없이 곁을 지켜주며<br>
+        그렇게 서로의 가장 편안하고 소중한 사람이 되었습니다.<br><br>
+        이제 연인으로 함께한 여덟 해를 지나<br>
+        앞으로의 모든 계절을 함께 살아가려 합니다.<br><br>
+        저희의 여덟 번째 여름이<br>
+        평생의 시작이 되는 날,<br>
+        소중한 걸음으로 함께해 주세요.<br><br>
+      </p>
+    </div>
 
     <div class="family-grid">
       <div class="family-person">
-        <p>이상돈·황애리 의 아들</p>
+        <p>이상돈 · 황애리 의 아들</p>
         <strong>인원</strong>
       </div>
       <span class="family-heart">♥</span>
       <div class="family-person">
-        <p>김수진·류경희 의 딸</p>
+        <p>김수진 · 류경희 의 딸</p>
         <strong>지윤</strong>
       </div>
     </div>
@@ -93,14 +102,14 @@
     <div class="gallery-list" id="galleryPreview" aria-live="polite"></div>
 
     <p class="gallery-poem">
-      It was not only a moment we shared,<br>
-      but a love held forever.
+      Tis better to have loved and lost<br>
+      Than never to have loved at all. 
     </p>
   </section>
 
   <!-- 04. DATE -->
   <section class="date paper-section">
-    <h2 class="section-title">DATE</h2>
+    <h2 class="section-title">Save the Date !</h2>
 
     <figure class="date-photo reveal">
       <img src="images/gallery4.jpg" alt="Wedding date photo" onerror="this.style.display='none';this.parentElement.classList.add('image-missing')">
@@ -111,7 +120,7 @@
       <div class="month-word"><span>A</span><em>ugust.</em></div>
       <div class="calendar" id="calendar"></div>
       <div class="date-divider"></div>
-      <p class="calendar-date">Sunday, August 22, 2027</p>
+      <p class="calendar-date">Sunday, August 22, 2027</p><br>
       <p class="dday" id="dday"></p>
     </div>
   </section>
@@ -152,7 +161,7 @@
   <!-- 06. LOCATION -->
   <section class="location paper-section">
     <h2 class="section-title">WEDDING LOCATION</h2>
-    <p class="location-name">라마다서울신도림호텔</p>
+    <p class="location-name">라마다 서울 신도림 호텔</p>
 
     <div class="map-frame">
       <div class="map-lines"></div>
@@ -190,7 +199,7 @@
 
     <div class="account-panel active" id="groomAccounts">
       <article class="account-row">
-        <div><small>신랑 | 인원</small><p>카카오뱅크</p><strong>0000-0000-0000</strong></div>
+        <div><small>신랑 | 인원</small><p>우리은행</p><strong>0000-0000-0000</strong></div>
         <button type="button" onclick="copyAccount('0000-0000-0000')">COPY</button>
       </article>
       <article class="account-row">
@@ -198,14 +207,14 @@
         <button type="button" onclick="copyAccount('0000-0000-0000')">COPY</button>
       </article>
       <article class="account-row">
-        <div><small>어머니 | 류경희</small><p>IBK 기업은행</p><strong>0000-0000-0000</strong></div>
+        <div><small>어머니 | 황애리</small><p>IBK 기업은행</p><strong>0000-0000-0000</strong></div>
         <button type="button" onclick="copyAccount('0000-0000-0000')">COPY</button>
       </article>
     </div>
 
     <div class="account-panel" id="brideAccounts">
       <article class="account-row">
-        <div><small>신부 | 지윤</small><p>카카오뱅크</p><strong>0000-0000-0000</strong></div>
+        <div><small>신부 | 지윤</small><p>신한은행</p><strong>110-338-141429</strong></div>
         <button type="button" onclick="copyAccount('0000-0000-0000')">COPY</button>
       </article>
       <article class="account-row">
@@ -222,7 +231,7 @@
   <!-- 08. END -->
   <section class="ending wine-section">
     <figure class="ending-photo">
-      <img src="images/gallery10.jpg" alt="Wedding ending photo" onerror="this.style.display='none';this.parentElement.classList.add('image-missing')">
+      <img src="images/hero.jpg" alt="Wedding ending photo" onerror="this.style.display='none';this.parentElement.classList.add('image-missing')">
       <span class="missing-label">PHOTO</span>
     </figure>
     <p class="ending-copy">Today, we are inviting you into<br>a story we chose to write together.</p>
